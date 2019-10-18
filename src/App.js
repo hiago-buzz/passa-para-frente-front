@@ -1,19 +1,12 @@
 import React from 'react';
-import logo from './logo.svg';
-import './ Placar.scss';
+import Home from './componentes/Home/Home';
 
-const Placar = ({time}) =>{
-    const [votos,setVotos] = useState(0);
- 
-    const incrementar = () =>{
-      setVotos(votos +1);
-    }
+
+const App = () => {
+  return(
+    <div>
+      <Home />
+    </div>
+ );
 }
-
-const decrementar = () =>{
-  if(votos >0){
-    setVotos(votos -1);
-  }
-}
-
-export default Placarcontainer;
+export default App;
