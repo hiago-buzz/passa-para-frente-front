@@ -1,0 +1,25 @@
+.Home{
+
+    header{
+        width: 100%;
+        height: 92.5vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(0, 0, 0, 0.774);
+        h1{
+        color: white;
+        font-size: 25pt;
+        }
+        p{
+            margin: 0 100px;
+            color: white;
+            font-size: 16pt;
+            background-color: rgba(0, 0, 0, 0.301);
+            padding: 30px;
+            border-radius: 30px;
+        }
+    }
+
+}
