@@ -8,7 +8,7 @@ const Nav = () => {
             <nav>
                 <h2>Passa Para Frente</h2>
                 <a href="#">Home</a>
-                <a href="#">login</a>
+                <a href="#">Login</a>
                 <a href="#">Cadastro Escola</a>
                 <a href="#">Cadastro Doador</a>
             </nav>
