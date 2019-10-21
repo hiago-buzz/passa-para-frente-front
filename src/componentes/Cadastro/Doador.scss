@@ -1,4 +1,4 @@
-.Login {
+.Doador {
     section{
         background-color: #282c34;
         min-height:92.5vh;
@@ -11,7 +11,20 @@
         input{
             display: flex;
             flex-direction: column;
-            margin: 10px 0px;
+            margin: 5px 0px;
+        }
+        select{
+            width: 300px;
+            height: 40px;
+            border-radius: 10px;
+            margin: 5px 0px;
+            border: none;
+            display: flex;
+            flex-direction: column;
+
+            background-color: white;   
+            option{
+            }
         }
     }
 

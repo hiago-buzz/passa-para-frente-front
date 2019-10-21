@@ -12,7 +12,7 @@ const Login = () => {
             <section>
              <h1>Login</h1>
              <form action="#">
-                 <Input label="E-mail:" tipo="text" placeholder="Digite seu email" />
+                 <Input label="E-mail:" tipo="email" placeholder="Digite seu email" />
                  <Input label="Senha:" tipo="password" placeholder="Digite sua senha" />
                  <Botao>Login</Botao>
              </form>
