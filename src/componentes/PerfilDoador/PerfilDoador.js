@@ -14,15 +14,15 @@ const PerfilDoador = () => {
                 <h6>Nome:</h6>
                 <p>Joãozinho</p>
                 <h6>Email:</h6>
+                <p>joao@sesc.com</p>
                 <h6>Idade:</h6>
                 <p>23</p>
-                <p>joao@sesc.com</p>
                 <h6>Telefone:</h6>
                 <p>11545302053</p>
                 <h6>Endereço:</h6>
                 <p>Rua da cacimba</p>
                 </div>
-                <Botao>Cadastrar Item</Botao>
+                <a href="/cadastraritem"><Botao>Cadastrar Item</Botao></a>
             </section>
         </div>
     )

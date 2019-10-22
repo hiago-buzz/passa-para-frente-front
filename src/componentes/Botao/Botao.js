@@ -1,11 +1,11 @@
 import React from 'react';
 import './Botao.scss'
 
-const Botao= ({children}) => {
+const Botao= ({onclick, children}) => {
 
     return(
         
-        <button>{children}</button>
+        <button onClick={onclick}>{children}</button>
     );
 }
 
