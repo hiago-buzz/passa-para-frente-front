@@ -1,11 +1,11 @@
 import React from 'react'
 import './Input.scss';
 
-const Input = ({tipo, placeholder, label}) => {
+const Input = ({tipo, placeholder, label,ref}) => {
     return (
         <div className='Input'>
             <label >{label}</label>
-            <input type={tipo} placeholder={placeholder}/>
+            <input ref={ref}type={tipo} placeholder={placeholder}/>
         </div>
     )
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import "./Nav.scss"
 
 
@@ -8,10 +8,10 @@ const Nav = () => {
         <div className="Nav">
             <nav>
                 <h2>Passa Para Frente</h2>
-                <a href="/">Home</a>
-                <a href="/login">Login</a>
-                <a href="/escola">Cadastro Escola</a>
-                <a href="/doador">Cadastro Doador</a>
+                <Link to="/">Home</Link>
+                <Link to="/login">Login</Link>
+                <Link to="/escola">Cadastro Escola</Link>
+                <Link to="/doador">Cadastro Doador</Link>
             </nav>
         </div>
     )
