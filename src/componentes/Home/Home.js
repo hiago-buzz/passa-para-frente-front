@@ -1,7 +1,6 @@
 import React from 'react';
-// import Botao from '../Botao/Botao';
 import Nav from '../Nav/Nav';
-import "./Home.scss";
+import './Home.scss';
 
 
 
@@ -18,4 +17,4 @@ const Home = () => {
 
  );
 }
-export default Home;
+export default Home;      
