@@ -13,6 +13,18 @@
             flex-direction: column;
             margin: 10px 0px;
         }
+        .checkbox{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            width: 10px;
+            // height: 20px;
+            input{
+                height: 20px;
+                margin: 0
+            }
+        }
     }
 
 }
