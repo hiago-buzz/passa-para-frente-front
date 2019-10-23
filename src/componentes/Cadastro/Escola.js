@@ -34,6 +34,8 @@ const Escola = () => {
         }).then(value => {
             if (value.id) {
                 alert("escola cadastrada")
+                localStorage.setItem("id", value.id)
+                window.location = "/perfilescola"
                 
             } else {
                 alert("houve um erro")
