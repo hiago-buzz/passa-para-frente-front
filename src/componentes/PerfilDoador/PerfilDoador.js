@@ -26,7 +26,7 @@ const PerfilDoador = () => {
     return (
         <div className="PerfilDoador">
             <div className="perfil">
-                <Link to="/"><h5>editar</h5></Link> 
+                <Link to="#"><h5>editar</h5></Link> 
                 <h5>perfil</h5>
                 <Link to="/"><h5>voltar</h5></Link> 
             </div>
