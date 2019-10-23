@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './PerfilDoador.scss'
 import Botao from '../Botao/Botao';
 
@@ -25,7 +26,9 @@ const PerfilDoador = () => {
     return (
         <div className="PerfilDoador">
             <div className="perfil">
+                <Link to="/"><h5>editar</h5></Link> 
                 <h5>perfil</h5>
+                <Link to="/"><h5>voltar</h5></Link> 
             </div>
             <section className="infos">
                 <div>
@@ -40,7 +43,7 @@ const PerfilDoador = () => {
                 <h6>Endereço:</h6>
                 <p>{data.endereco}</p>
                 </div>
-                <a href="/cadastraritem"><Botao>Cadastrar Item</Botao></a>
+                <Link to="/cadastraritem"><Botao>Cadastrar Item</Botao></Link>
             </section>
         </div>
     )
