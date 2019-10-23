@@ -7,6 +7,7 @@ import PerfilEscola from './componentes/PerfilEscola/PerfilEscola';
 import PerfilDoador from './componentes/PerfilDoador/PerfilDoador';
 import CadastrarItem from './componentes/CadastrarItem/CadastrarItem';
 import {BrowserRouter as Router,Route} from 'react-router-dom';
+import ListaItens from './componentes/ListaItens/ListaItens';
 
 
 const App = () => {
@@ -20,6 +21,7 @@ const App = () => {
        <Route  path="/perfilescola" component={PerfilEscola}/>
        <Route  path="/perfildoador" component={PerfilDoador}/>
        <Route  path="/cadastraritem" component={CadastrarItem}/>
+       <Route  path="/itens" component={ListaItens}/>
 
       </Router>
 
