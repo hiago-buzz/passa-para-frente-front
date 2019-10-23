@@ -2,7 +2,26 @@ import React from 'react'
 import './PerfilDoador.scss'
 import Botao from '../Botao/Botao';
 
+
 const PerfilDoador = () => {
+
+    const [data, setData] = React.useState({})
+
+    const id = localStorage.getItem("id");
+
+    React.useEffect(() => {
+        buscaPerfil();
+    }, []);
+
+    const buscaPerfil = () => {
+        fetch('http://localhost:8000/api/doadores/' + id + '/')
+        .then(result => {
+            return result.json()
+        }).then(data =>{
+        setData(data);
+        })
+    }
+
     return (
         <div className="PerfilDoador">
             <div className="perfil">
@@ -10,17 +29,16 @@ const PerfilDoador = () => {
             </div>
             <section className="infos">
                 <div>
-
                 <h6>Nome:</h6>
-                <p>Joãozinho</p>
+                <p>{data.nome}</p>
                 <h6>Email:</h6>
-                <p>joao@sesc.com</p>
+                <p>{data.email}</p>
                 <h6>Idade:</h6>
-                <p>23</p>
+                <p>{data.idade}</p>
                 <h6>Telefone:</h6>
-                <p>11545302053</p>
+                <p>{data.telefone}</p>
                 <h6>Endereço:</h6>
-                <p>Rua da cacimba</p>
+                <p>{data.endereco}</p>
                 </div>
                 <a href="/cadastraritem"><Botao>Cadastrar Item</Botao></a>
             </section>
