@@ -35,7 +35,11 @@ const Doador = () => {
             return value.json()
         }).then(value => {
             if (value.id) {
-                alert("doador cadastrado cadastrada")
+                
+                alert("doador cadastrado")
+                localStorage.setItem("id", value.id)
+                window.location = "/perfildoador"
+
             } else {
                 alert("houve um erro")
             }
