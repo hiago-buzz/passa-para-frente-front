@@ -27,7 +27,7 @@ const Doador = ({editando}) => {
         event.preventDefault();
 
         fetch('http://localhost:8000/api/doadores/' + (editando ? id + "/" : ""), {
-            method: (editando ? 'PUT' : 'POST'),
+        method: (editando ? 'PUT' : 'POST'),
             body: JSON.stringify({
                 nome: nomeRef.current.value,
                 idade: idadeRef.current.value,
