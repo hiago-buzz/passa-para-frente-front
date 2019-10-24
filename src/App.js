@@ -20,6 +20,9 @@ const App = () => {
        <Route  path="/doador" component={Doador}/>
        <Route  path="/perfilescola" component={PerfilEscola}/>
        <Route  path="/perfildoador" component={PerfilDoador}/>
+
+       <Route  path="/editardoador" component={() => <Doador editando="true"/>}/>
+       
        <Route  path="/cadastraritem" component={CadastrarItem}/>
        <Route  path="/itens" component={ListaItens}/>
 

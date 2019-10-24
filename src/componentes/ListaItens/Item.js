@@ -25,9 +25,11 @@ const Item = ({id, nome, descricao}) => {
         return (
         <div className="Itens">
                  <div>
-                    <h5>{nome}</h5>
+                    <h6>Nome:</h6>
+                    <p>{nome}</p>
+                    <h6>Descrição:</h6>
                     <p>{descricao}</p>
-                    <button onClick={aceitarItem}>minha aceita namoralzinha</button>
+                    <button onClick={aceitarItem}>Aceitar doação</button>
                 </div>
             
         </div>

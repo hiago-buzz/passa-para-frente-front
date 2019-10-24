@@ -41,7 +41,7 @@ const PerfilEscola = () => {
                 {/* <h6>Estado:</h6>
                 <p>{data.estado}</p> */}
                 </div>
-                <Botao>Procurar doação</Botao>
+               <Link to="/itens"><Botao>Procurar doaçoes</Botao></Link>
             </section>
         </div>
     )
