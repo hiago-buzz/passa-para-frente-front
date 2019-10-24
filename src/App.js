@@ -19,6 +19,9 @@ const App = () => {
        <Route  path="/escola" component={Escola}/>
        <Route  path="/doador" component={Doador}/>
        <Route  path="/perfilescola" component={PerfilEscola}/>
+
+      <Route  path="/editarescola" component={() => <Escola editando="true"/>}/>       
+
        <Route  path="/perfildoador" component={PerfilDoador}/>
 
        <Route  path="/editardoador" component={() => <Doador editando="true"/>}/>

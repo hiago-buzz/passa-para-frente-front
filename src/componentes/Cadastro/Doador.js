@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
 import './Doador.scss'
-import { directive } from '@babel/types';
 import Nav from '../Nav/Nav';
-import Input from '../Input/Input';
 import Botao from '../Botao/Botao';
 
 const Doador = ({editando}) => {
