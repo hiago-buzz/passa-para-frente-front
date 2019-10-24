@@ -87,7 +87,6 @@ const Doador = ({editando}) => {
                     <input type="text" ref={nomeRef} placeholder={"digite seu nome"} required />
                     <input type="number" min="18" ref={idadeRef} placeholder={"digite sua idade "}required />
                     <input type="text" ref={enderecoRef} placeholder={"digite seu endereço"} required />
-                    <label >Estado:</label>
                     <select ref={estadoRef}name="estado" >
                         <option value="estado">---</option>
                         <option value="SP">São Paulo</option>

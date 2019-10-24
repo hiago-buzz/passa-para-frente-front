@@ -44,6 +44,7 @@ const PerfilDoador = () => {
                 <Link to="/editardoador"><h5>editar</h5></Link>
                 <h5 onClick={deletarDoador}>deletar</h5>
                 <Link to="/"><h5>voltar</h5></Link> 
+                <Link to="/itemdoador"><h5>Meus itens</h5></Link>
             </div>
             <section className="infos">
                 <div>

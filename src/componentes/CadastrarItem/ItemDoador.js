@@ -1,9 +1,10 @@
 import React from 'react';
-import './ListaItens.scss';
 import {Link} from 'react-router-dom';
-import Item from './Item';
+import './ItemDoador.scss';
+import Item from '../ListaItens/Item';
 
-const ListaItens = () => {
+
+const ItemDoador = () =>{
     const [data, setData] = React.useState([])
 
     const id = localStorage.getItem("id");
@@ -13,7 +14,7 @@ const ListaItens = () => {
     }, []);
 
     const Itens = () => {
-        fetch ('http://localhost:8000/api/doacoes/disponiveis/')
+        fetch ('http://localhost:8000/api/doadores/'+ id +'/itensCadastrados/')
         .then(result => {
             return result.json()
         }).then(data =>{
@@ -21,14 +22,17 @@ const ListaItens = () => {
             console.log(data)
         })
     }
-  return(
-    <div className="Lista">
-        <Link to="/perfilescola"><h5>voltar</h5></Link> 
+    return(
+        <div className="Item">
+        <Link to="/"><h5>voltar</h5></Link>
+        <Link to="/"><h5>editar</h5></Link>
+        <h5 >deletar</h5> 
         <section className="itens">
-        <h1>Objetos Disponiveis</h1>
         <div className="Itens">
+        <h1>Meus Itens</h1>
             {data.map((item) => {
-                return <Item id={item.id} nome={item.nome} descricao={item.descricao}botao={"aceita minha doaçao"}/>
+                return <Item id={item.id} nome={item.nome} descricao={item.descricao} />
+
             })
 
             }
@@ -38,4 +42,4 @@ const ListaItens = () => {
     </div>
     )
 }
-export default ListaItens;
+export default ItemDoador;

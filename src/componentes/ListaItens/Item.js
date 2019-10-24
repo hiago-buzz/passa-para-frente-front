@@ -1,7 +1,7 @@
 import React from 'react'
 import { METHODS } from 'http';
 
-const Item = ({id, nome, descricao}) => {
+const Item = ({id, nome, descricao,botao}) => {
     
     const aceitarItem = () => {
         let IdEscola = localStorage.getItem("id")
@@ -29,7 +29,7 @@ const Item = ({id, nome, descricao}) => {
                     <p>{nome}</p>
                     <h6>Descrição:</h6>
                     <p>{descricao}</p>
-                    <button onClick={aceitarItem}>Aceitar doação</button>
+                    <button onClick={aceitarItem}>{botao}</button>
                 </div>
             
         </div>
