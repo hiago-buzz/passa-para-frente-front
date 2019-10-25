@@ -1,7 +1,8 @@
 import React from 'react'
+import {Link} from 'react-router-dom';
 import { METHODS } from 'http';
 
-const Item = ({id, nome, descricao,botao}) => {
+const Item = ({id, nome, descricao,botao,caminho,click}) => {
     
     const aceitarItem = () => {
         let IdEscola = localStorage.getItem("id")
@@ -18,6 +19,7 @@ const Item = ({id, nome, descricao,botao}) => {
         return response.json();
     }).then(() =>{
         window.location = window.location;
+        
     })
         
     }
@@ -29,7 +31,9 @@ const Item = ({id, nome, descricao,botao}) => {
                     <p>{nome}</p>
                     <h6>Descrição:</h6>
                     <p>{descricao}</p>
-                    <button onClick={aceitarItem}>{botao}</button>
+                    <Link to={caminho}>
+                    <button onClick={click}>{botao}</button>
+                    </Link>
                 </div>
             
         </div>

@@ -37,7 +37,8 @@ const PerfilEscola = () => {
     return (
         <div className="PerfilEscola">
             <div className="perfil">
-                <Link to="/editarescola"><h5>editar</h5></Link> 
+                <Link to="/editarescola"><h5>editar</h5></Link>
+                <Link to="/itensarecadados"><h5>Aceitados</h5></Link> 
                 <h5 onClick={deletarEscola}>Deletar</h5>
                <Link to="/"><h5>voltar</h5></Link> 
             </div>

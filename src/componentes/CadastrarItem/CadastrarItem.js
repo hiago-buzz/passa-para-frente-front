@@ -3,9 +3,10 @@ import { Link } from 'react-router-dom'
 import "./CadastrarItem.scss"
 import Botao from '../Botao/Botao';
 
-const CadastrarItem = () => {
+const CadastrarItem = ({editando}) => {
     const nomeRef = React.useRef("");
     const descricaoRef = React.useRef("");
+
 
     const cadastrar = (event) => {
         event.preventDefault();
@@ -24,7 +25,11 @@ const CadastrarItem = () => {
             return value.json()
         }).then(value => {
             if (value.id) {
-                alert("item cadastrada")
+                alert((editando ? 'Dados alterados' : 'doador cadastrado'))
+                localStorage.setItem("id", value.id)
+                window.location = "/cadastraritem"
+
+
                                 
             } else {
                 alert("houve um erro")
@@ -32,10 +37,12 @@ const CadastrarItem = () => {
 
             nomeRef.current.value = "";
             descricaoRef.current.value = "";
-
+            
         })
     }
+  
     return (
+        
         <div className="CadastrarItem">
             <Link to="/perfildoador"><h5>voltar</h5></Link> 
          <section className="tela">

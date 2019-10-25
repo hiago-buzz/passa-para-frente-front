@@ -21,6 +21,25 @@ const ListaItens = () => {
             console.log(data)
         })
     }
+    const aceitarItem = () => {
+        let IdEscola = localStorage.getItem("id")
+        fetch('http://localhost:8000/api/escolas/'+IdEscola +'/aceitar/',{
+            method:"POST",
+            body: JSON.stringify({
+                doacao: id
+            }),
+            headers: {
+                'Content-type': 'application/json'
+
+            }
+    }).then((response) => {
+        return response.json();
+    }).then(() =>{
+        window.location = window.location;
+        
+    })
+        
+    }
   return(
     <div className="Lista">
         <Link to="/perfilescola"><h5>voltar</h5></Link> 
@@ -28,7 +47,7 @@ const ListaItens = () => {
         <h1>Objetos Disponiveis</h1>
         <div className="Itens">
             {data.map((item) => {
-                return <Item id={item.id} nome={item.nome} descricao={item.descricao}botao={"aceita minha doaçao"}/>
+                return <Item id={item.id} click={aceitarItem} nome={item.nome} descricao={item.descricao}botao={"Aceitar Doação"}/>
             })
 
             }
