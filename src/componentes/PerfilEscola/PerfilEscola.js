@@ -8,10 +8,6 @@ const PerfilEscola = () => {
 
     const id = localStorage.getItem("id");
 
-    if(!id) {
-        window.location = "/escola";
-    }
-
     React.useEffect(() => {
         buscaPerfil();
     }, []);
@@ -24,22 +20,11 @@ const PerfilEscola = () => {
         setData(data);
         })
     }
-    const deletarEscola = () =>{
-        if(window.confirm('deseja deletar seu perfil?')) {
-            fetch('http://localhost:8000/api/escolas/' + id + '/' ,{
-                method:"DELETE",
-            }).then(() =>{
-                localStorage.removeItem("id");
-                window.location = 'http://localhost:3000/';
-            })
-        }
-    }
     return (
         <div className="PerfilEscola">
             <div className="perfil">
-                <Link to="/editarescola"><h5>editar</h5></Link>
-                <Link to="/itensarecadados"><h5>Aceitados</h5></Link> 
-                <h5 onClick={deletarEscola}>Deletar</h5>
+                <Link to="/"><h5>editar</h5></Link> 
+                <h5>perfil</h5>
                <Link to="/"><h5>voltar</h5></Link> 
             </div>
             <section className="infos">
@@ -56,7 +41,7 @@ const PerfilEscola = () => {
                 {/* <h6>Estado:</h6>
                 <p>{data.estado}</p> */}
                 </div>
-               <Link to="/itens"><Botao>Procurar doaçoes</Botao></Link>
+                <Botao>Procurar doação</Botao>
             </section>
         </div>
     )

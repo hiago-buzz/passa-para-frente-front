@@ -4,16 +4,11 @@ import './PerfilDoador.scss'
 import Botao from '../Botao/Botao';
 
 
-
 const PerfilDoador = () => {
 
     const [data, setData] = React.useState({})
 
     const id = localStorage.getItem("id");
-
-    if(!id) {
-        window.location = "/doador";
-    }
 
     React.useEffect(() => {
         buscaPerfil();
@@ -27,24 +22,13 @@ const PerfilDoador = () => {
         setData(data);
         })
     }
-    const deletarDoador = () =>{
-        if(window.confirm('deseja deletar seu perfil?')) {
-            fetch('http://localhost:8000/api/doadores/' + id + '/' ,{
-                method:"DELETE",
-            }).then(() =>{
-                localStorage.removeItem("id");
-                window.location = 'http://localhost:3000/';
-            })
-        }
-    }
 
     return (
         <div className="PerfilDoador">
             <div className="perfil">
-                <Link to="/editardoador"><h5>editar</h5></Link>
-                <h5 onClick={deletarDoador}>deletar</h5>
+                <Link to="/"><h5>editar</h5></Link> 
+                <h5>perfil</h5>
                 <Link to="/"><h5>voltar</h5></Link> 
-                
             </div>
             <section className="infos">
                 <div>
