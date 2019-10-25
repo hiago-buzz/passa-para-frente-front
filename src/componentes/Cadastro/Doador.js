@@ -1,18 +1,11 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './Doador.scss'
+import { directive } from '@babel/types';
 import Nav from '../Nav/Nav';
+import Input from '../Input/Input';
 import Botao from '../Botao/Botao';
 
-const Doador = ({editando}) => {
-    
-    const id = localStorage.getItem("id");
-
-    React.useEffect(() => {
-        if(editando) {
-            buscarDoador();
-        }
-    }, []);
-
+const Doador = () => {
     const nomeRef = React.useRef("");
     const idadeRef = React.useRef("");
     const enderecoRef = React.useRef("");
@@ -24,8 +17,8 @@ const Doador = ({editando}) => {
     const criarDoador = (event) => {
         event.preventDefault();
 
-        fetch('http://localhost:8000/api/doadores/' + (editando ? id + "/" : ""), {
-        method: (editando ? 'PUT' : 'POST'),
+        fetch('http://localhost:8000/api/doadores/', {
+            method: 'POST',
             body: JSON.stringify({
                 nome: nomeRef.current.value,
                 idade: idadeRef.current.value,
@@ -41,8 +34,9 @@ const Doador = ({editando}) => {
         }).then(value => {
             return value.json()
         }).then(value => {
-            if (value.id) {  
-                alert((editando ? 'Dados alterados' : 'doador cadastrado'))
+            if (value.id) {
+                
+                alert("doador cadastrado")
                 localStorage.setItem("id", value.id)
                 window.location = "/perfildoador"
 
@@ -60,41 +54,24 @@ const Doador = ({editando}) => {
 
         })
     }
-
-    const buscarDoador = ()=>{
-        fetch('http://localhost:8000/api/doadores/' + id + '/')
-        .then(result => {
-            return result.json()
-        }).then(data =>{
-            nomeRef.current.value = data.nome;
-            idadeRef.current.value = data.idade;
-            enderecoRef.current.value = data.endereco;
-            estadoRef.current.value = data.estado;
-            telefoneRef.current.value = data.telefone;
-            emailRef.current.value = data.email;
-            senhaRef.current.value = data.senha;
-        })
-    }
-    
     return (
         <div className="Doador">
             <Nav />
             <section>
-                {!editando && <h1>Cadastre-se</h1>}
-                {editando && <h1>Editar perfil</h1>}
-
+                <h1>Cadastre-se</h1>
                 <form onSubmit={criarDoador}>
-                    <input type="text" ref={nomeRef} placeholder={"digite seu nome"} required />
-                    <input type="number" min="18" ref={idadeRef} placeholder={"digite sua idade "}required />
-                    <input type="text" ref={enderecoRef} placeholder={"digite seu endereço"} required />
+                    <input type="text" ref={nomeRef} placeholder={"digite seu nome"} />
+                    <input type="text" ref={idadeRef} placeholder={"digite sua idade "}/>
+                    <input type="text" ref={enderecoRef} placeholder={"digite seu endereço"} />
+                    <label >Estado:</label>
                     <select ref={estadoRef}name="estado" >
                         <option value="estado">---</option>
                         <option value="SP">São Paulo</option>
                     </select>
-                    <input type="int" ref={telefoneRef} placeholder={"digite seu telefone"} required />
-                    <input type="email" ref={emailRef} placeholder={"digite seu email"} required />
-                    <input type="password" ref={senhaRef} placeholder={"digite sua senha"} required />
-                    <Botao>Registrar</Botao>
+                    <input type="int" ref={telefoneRef} placeholder={"digite seu telefone"} />
+                    <input type="email" ref={emailRef} placeholder={"digite seu email"} />
+                    <input type="password" ref={senhaRef} placeholder={"digite sua senha"} />
+                    <Botao >Registrar</Botao>
                     
 
                 </form>
